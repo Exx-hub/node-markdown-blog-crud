@@ -1,0 +1,12 @@
+<%- include('../partials/head.ejs') %>
+    <title>Add New Article</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mb-4">New Article</h1>
+      <form action="/articles" method="post">
+        <%- include('../partials/form-fields.ejs') %>
+      </form>
+    </div>
+  </body>
+</html>

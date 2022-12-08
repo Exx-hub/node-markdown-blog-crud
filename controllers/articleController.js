@@ -3,7 +3,6 @@ const Article = require("../models/article");
 const getAllArticles = async (req, res) => {
   try {
     const articles = await Article.find({}).sort({ createdAt: "desc" });
-    console.log(articles);
     res.render("articles/index", { articles: articles });
     // res.json({ articles });
   } catch (err) {

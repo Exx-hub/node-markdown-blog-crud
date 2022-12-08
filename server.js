@@ -16,8 +16,6 @@ mongoose.connect(mongoUri, {
   useUnifiedTopology: true,
 });
 
-mongoose.set("strictQuery", false);
-
 app.set("view engine", "ejs");
 app.set("views", "views");
 
@@ -32,18 +30,6 @@ app.use(methodOverride("_method"));
 // application routes
 app.use("/articles", articleRoutes);
 app.get("/", (req, res) => res.redirect("/articles"));
-
-// app.get("/", (req, res, next) => {
-//   const articles = [
-//     {
-//       title: "my first blog",
-//       createdAt: new Date().toLocaleDateString(),
-//       description: "test description",
-//     },
-//   ];
-
-//   res.render("articles/index", { articles: articles });
-// });
 
 //error route
 app.use((req, res, next) => {
